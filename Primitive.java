@@ -1,22 +1,60 @@
+import java.util.*;
 public class Primitive {
 
     //method to remove the outer parenthesees
-    public String removeOuterParentheses(String s){
+    public static String removeOuterParentheses(String s){
         
-        return s;
+        //create a stack to check the inner and outer parentheses
+        Stack<Character> stack = new Stack<>();
+        
+        //create a variable to insert the required answer
+        StringBuilder answer = new StringBuilder();
+
+        //looping through the String 
+        for(int i=0; i<s.length(); i++){
+            char ch = s.charAt(i);
+            if(ch == '('){
+                //check the size of stack, if it is empty just put it in the stack not in answer, if not empty put in answer as well as stack too
+                if(stack.size()>0){
+                    
+                    answer.append(ch);
+                }
+                stack.push(ch);
+            }
+            else{
+        //condition when the parentheses is closing
+        if(stack.size()>0){
+            stack.pop();
+            if(stack.size()>0){
+                answer.append(ch);
+            }
+        }
+            }
+        }
+        return answer.toString();
+
+        
     }
 
     public static void main(String[] args){
-
+removeOuterParentheses("(())()))");
     }
 }
-/* Notes
- A primtive is the smallest valid box that cannot be broken into smaller independent parts.
- - A counter is required to track the opening and closing of the bracket. 
-
-First split into two parts
-then remove the outermost parentheses and add the split parts
+/* Notes 
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
