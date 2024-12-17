@@ -40,20 +40,26 @@ public class Primitive {
 removeOuterParentheses("(())()))");
     }
 }
-/* Notes 
+/* Notes
+ A primtive is the smallest valid box that cannot be broken into smaller independent parts.
+ - A counter is required to track the opening and closing of the bracket. 
+
+First split into two parts
+then remove the outermost parentheses and add the split parts
+
+
+#Process the innermost and make it answer
+
+
+#For problem like Parentheses, stack is used
+How the problem is solved:
+First, as it is about the parentheses, most probaly the stack is used.
+For the first opening bracket, check whether the stack is empty of not, if it is then it is the outer bracket which we have to remove. 
+Traverse the string, if the opening bracket is found, check whether the stack is empty or not. If it is not empty, push into stack as well as answer StringBuilder. 
+If we found the closing bracket, if the stack is empty, it is the outer bracket so remove the closing bracket from the stack.
+If the stack is not empty,  remove the closing bracket from the stack and push the closing bracket into the answer.
+Since all the output are in Character type, convert them into String using toString()
  */
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
