@@ -1,41 +1,26 @@
-import java.util.HashMap;
+import java.util.*;
 
 public class Test{
-    
-    public static  boolean isAnagram(String s, String t) {
-        int counter = 1;
-        // putting one of the String character into HashMap to check and get the value
-        // efficiently
-        HashMap<Integer, Character> map1 = new HashMap<>();
-        // adding each character of String S as character Value and the Integer as Key.
-        for (int i = 0; i < s.length(); i++) {
-            map1.put(counter, s.charAt(i));
-            counter++;
-        }
 
-        // creating second HashMap to store the character of t.
-        HashMap<Integer, Character> map2 = new HashMap<>();
-        for (int j = 0; j < t.length(); j++) {
-            map2.put(counter, t.charAt(j));
+    public static void main(String[] args){
+    LinkedList<Integer> list1 = new LinkedList<>();
+    LinkedList<Integer> list2 = new LinkedList<>();
+
+    list1.add(1);   list1.add(3); list1.add(4); list1.add(9);
+    list2.add(2); list2.add(5); list2.add(5); list2.add(11); list2.add(17); list2.add(22);
+    //creating a array and putting those value
+        ArrayList<Integer> aList = new ArrayList<>();
+
+        //traversing thorugh each linked list and adding them into array
+        for(int i=0; i<list1.size(); i++){
+            aList.add(list1.get(i));
         }
-        // No we have create two map, comparing the two maps
-        for (int check1 = 1; check1 <= s.length(); check1++) {
-            // nested loop
-            for (int check2 = 1; check2 <= t.length(); check2++) {
-                if (map1.get(check1) == map2.get(check2)) {
-                    return true;
-                }
-                
-            }
+        for(int j=0; j<list2.size(); j++){
+            aList.add(list2.get(j));
         }
-return false;
+        Collections.sort(aList);
+        System.out.println(aList);
+
+
     }
-
-
-    //main method
-    public static void main(String[] args) {
-        
-        if(isAnagram("rat", "cat"));
-        
-    }}
-
+}
