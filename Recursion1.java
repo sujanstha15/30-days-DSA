@@ -1,3 +1,6 @@
+/*
+ Q. Write a recursive function that gives an input n sums all non negative integers up to n. 
+ */
 public class Recursion1 {
     //recursive method to calculate the sum
     public static int calcSum(int n){
